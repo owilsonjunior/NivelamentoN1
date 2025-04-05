@@ -15,7 +15,6 @@ Este projeto faz parte de um treinamento prático para analistas N1 de aplicaç�
 - Conexões HTTP fechadas após cada requisição (`option http-server-close`)
 - Fácil simulação de sessões simultâneas para testes
 
-```
 ### Script de simulação (opcional)
 
 Você pode usar o script `simular_sessoes_haproxy.sh` para simular múltiplas sessões simultâneas e ver o comportamento do balanceador em ação.
