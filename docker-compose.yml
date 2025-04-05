@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  app01:
+    build: ./app01
+    container_name: app01
+    ports:
+      - "8081:80"
+
+  app02:
+    build: ./app02
+    container_name: app02
+    ports:
+      - "8082:80"
+
+  haproxy:
+    image: haproxy:alpine
+    container_name: haproxy
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - "8080:80"
+      - "8083:8404"
+    depends_on:
+      - app01
+      - app02
